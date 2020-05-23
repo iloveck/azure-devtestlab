@@ -1,22 +1,67 @@
 //try PR
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-      "newVMName": {
-        "value": "DevOpsAgent-Aut"
-      },
-      "labName": {
-        "value": "dtl-developer-workstations"
-      },
-      "size": {
-        "value": "Standard_B4ms"
-      },
-      "userName": {
-        "value": "DevOps"
-      },
-      "password": {
-        "value": null
-      }
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "newVMName": {
+      "type": "string",
+      "defaultValue": "DevOpsAgent-Aut"
+    },
+    "labName": {
+      "type": "string",
+      "defaultValue": "dtl-developer-workstations"
+    },
+    "size": {
+      "type": "string",
+      "defaultValue": "Standard_B4ms"
+    },
+    "userName": {
+      "type": "string",
+      "defaultValue": "DevOps"
+    },
+    "password": {
+      "type": "securestring"
+    },
+    "Azure_Pipelines_Agent_vstsAccount": {
+      "type": "string",
+      "defaultValue": "costcocloudops"
+    },
+    "Azure_Pipelines_Agent_vstsPassword": {
+      "type": "securestring"
+    },
+    "Azure_Pipelines_Agent_agentName": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "Azure_Pipelines_Agent_agentNameSuffix": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "Azure_Pipelines_Agent_poolName": {
+      "type": "string",
+      "defaultValue": "Membership"
+    },
+    "Azure_Pipelines_Agent_RunAsAutoLogon": {
+      "type": "bool",
+      "defaultValue": true
+    },
+    "Azure_Pipelines_Agent_windowsLogonAccount": {
+      "type": "string",
+      "defaultValue": "Pa$$word12345+"
+    },
+    "Azure_Pipelines_Agent_windowsLogonPassword": {
+      "type": "securestring"
+    },
+    "Azure_Pipelines_Agent_driveLetter": {
+      "type": "string",
+      "defaultValue": "C"
+    },
+    "Azure_Pipelines_Agent_workDirectory": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "Azure_Pipelines_Agent_replaceAgent": {
+      "type": "bool",
+      "defaultValue": false
     }
   }
